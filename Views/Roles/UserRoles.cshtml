@@ -1,0 +1,36 @@
+@model List<NorthwindApp.Models.UserRoleViewModel>
+@{
+    ViewData["Title"] = "Usuarios y sus roles";
+}
+
+<h2>Usuarios y sus roles</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Email</th>
+            <th>Roles asignados</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Email</td>
+                <td>
+                    @if (item.Roles.Any())
+                    {
+                        @string.Join(", ", item.Roles)
+                    }
+                    else
+                    {
+                        <span class="text-muted">Sin roles</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="AssignRole" class="btn btn-primary">Asignar otro rol</a>
+<a asp-action="Index" class="btn btn-secondary ms-2">Volver</a>

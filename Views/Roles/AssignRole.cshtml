@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Asignar rol a usuario";
+}
+
+<h2>Asignar rol a usuario</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AssignRole" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                <label for="userId" class="form-label">Usuario</label>
+                <select name="userId" id="userId" class="form-select" required>
+                    <option value="">-- Selecciona un usuario --</option>
+                    @foreach (var user in (List<Microsoft.AspNetCore.Identity.IdentityUser>)ViewBag.Users)
+                    {
+                        <option value="@user.Id">@user.Email</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="roleName" class="form-label">Rol</label>
+                <select name="roleName" id="roleName" class="form-select" required>
+                    <option value="">-- Selecciona un rol --</option>
+                    @foreach (var role in (List<Microsoft.AspNetCore.Identity.IdentityRole>)ViewBag.Roles)
+                    {
+                        <option value="@role.Name">@role.Name</option>
+                    }
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Asignar</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+        </form>
+    </div>
+</div>
