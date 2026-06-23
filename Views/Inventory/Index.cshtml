@@ -1,0 +1,75 @@
+@model IEnumerable<NorthwindApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Gestion de Inventario";
+}
+
+<h2>Gestion de Inventario</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="mb-3 d-flex gap-2">
+    <a asp-action="LowStock" class="btn btn-warning">
+        <i class="bi bi-exclamation-triangle"></i> Bajo Stock
+    </a>
+    <a asp-action="Orders" class="btn btn-info">
+        <i class="bi bi-list-ul"></i> Ver Ordenes
+    </a>
+</div>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Producto</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+            <th>Stock Actual</th>
+            <th>Incrementar</th>
+            <th>Reducir</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductName</td>
+                <td>@product.Category?.CategoryName</td>
+                <td>$@product.UnitPrice?.ToString("0.00")</td>
+                <td>
+                    <span class="badge @(product.UnitsInStock <= product.ReorderLevel ? "bg-danger" : "bg-success")">
+                        @product.UnitsInStock uds.
+                    </span>
+                </td>
+                <td>
+                    <form method="post" asp-action="IncreaseStock" class="d-flex gap-1 align-items-center">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="productId" value="@product.ProductId" />
+                        <input type="number" name="amount" value="1" min="1" max="1000"
+                               class="form-control form-control-sm" style="width:65px" />
+                        <button type="submit" class="btn btn-success btn-sm" title="Incrementar stock">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="DecreaseStock" class="d-flex gap-1 align-items-center">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="productId" value="@product.ProductId" />
+                        <input type="number" name="amount" value="1" min="1" max="1000"
+                               class="form-control form-control-sm" style="width:65px" />
+                        <button type="submit" class="btn btn-danger btn-sm" title="Reducir stock">
+                            <i class="bi bi-dash-lg"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

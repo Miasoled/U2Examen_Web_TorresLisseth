@@ -1,0 +1,53 @@
+@model IEnumerable<NorthwindApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Tienda - Productos Disponibles";
+}
+
+<h2>Productos Disponibles</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<form method="post" asp-controller="Shop" asp-action="AddToCart">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Producto</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.Category?.CategoryName</td>
+                    <td>$@product.UnitPrice?.ToString("F2")</td>
+                    <td>
+                        <span class="badge @(product.UnitsInStock <= 10 ? "bg-warning" : "bg-success")">
+                            @product.UnitsInStock unidades
+                        </span>
+                    </td>
+                    <td style="width:110px">
+                        <input type="hidden" name="productIds" value="@product.ProductId" />
+                        <input type="number" name="quantities[@product.ProductId]"
+                               min="0" max="@product.UnitsInStock"
+                               value="0" class="form-control form-control-sm" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="mt-4 mb-5 pb-3">
+        <button type="submit" class="btn btn-primary btn-lg px-4">
+            Agregar al Carrito
+        </button>
+    </div>
+</form>

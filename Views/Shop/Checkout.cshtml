@@ -1,0 +1,45 @@
+@model List<NorthwindApp.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Confirmar Compra";
+}
+
+<h2> Confirmar tu Compra</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>$@item.UnitPrice.ToString("0.00")</td>
+                <td>@item.Quantity</td>
+                <td>$@item.Subtotal.ToString("0.00")</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr class="table-success">
+            <td colspan="3"><strong>TOTAL</strong></td>
+            <td><strong>$@Model.Sum(i => i.Subtotal).ToString("0.00")</strong></td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="mt-3 d-flex gap-2">
+    <a asp-action="Cart" class="btn btn-secondary"> Volver al Carrito</a>
+   <form method="post" asp-action="PlaceOrder" asp-controller="Shop">
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-success btn-lg">
+             Confirmar y Registrar Orden
+        </button>
+    </form>
+</div>

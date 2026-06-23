@@ -1,11 +1,5 @@
-C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\Publicacion\web.config
 C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\appsettings.json
-C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\Publicacion\appsettings.Development.json
-C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\Publicacion\appsettings.json
-C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\Publicacion\NorthwindApp.deps.json
-C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\Publicacion\NorthwindApp.runtimeconfig.json
-C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\Publicacion\NorthwindApp.staticwebassets.endpoints.json
 C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\NorthwindApp.staticwebassets.runtime.json
 C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\NorthwindApp.staticwebassets.endpoints.json
 C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\NorthwindApp.exe
@@ -331,7 +325,6 @@ C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\a3ygkwa5zy-{0}-2
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\nezrqnk58p-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\wpvydqlrn3-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\ay9spviqrw-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\t03icfuuz8-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\h4oxagiez7-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -410,3 +403,17 @@ C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\NorthwindApp.dll
 C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\NorthwindApp.pdb
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\NorthwindApp.genruntimeconfig.cache
 C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\ref\NorthwindApp.dll
+C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\NorthwindApp.sourcelink.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\Publicacion\web.config
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\web.config
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\appsettings.Development.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\appsettings.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\NorthwindApp.deps.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\NorthwindApp.runtimeconfig.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\NorthwindApp.staticwebassets.endpoints.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\Publicacion\appsettings.Development.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\Publicacion\appsettings.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\Publicacion\NorthwindApp.deps.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\Publicacion\NorthwindApp.runtimeconfig.json
+C:\Users\User\Desktop\NorthwindApp\bin\Debug\net10.0\publish\Publicacion\NorthwindApp.staticwebassets.endpoints.json
+C:\Users\User\Desktop\NorthwindApp\obj\Debug\net10.0\compressed\wpvydqlrn3-{0}-h73rzjwgoj-h73rzjwgoj.gz

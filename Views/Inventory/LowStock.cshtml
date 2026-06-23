@@ -1,0 +1,38 @@
+@model IEnumerable<NorthwindApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Productos con Bajo Stock";
+}
+
+<h2> Productos con Bajo Stock</h2>
+
+<a asp-action="Index" class="btn btn-secondary mb-3"> Volver al Inventario</a>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-success"> No hay productos con bajo stock.</div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead class="table-warning">
+            <tr>
+                <th>Producto</th>
+                <th>Categora</th>
+                <th>Stock Actual</th>
+                <th>Nivel Mnimo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr class="table-danger">
+                    <td>@product.ProductName</td>
+                    <td>@product.Category?.CategoryName</td>
+                    <td><strong>@product.UnitsInStock</strong></td>
+                    <td>@product.ReorderLevel</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

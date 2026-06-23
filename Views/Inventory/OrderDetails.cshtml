@@ -1,0 +1,48 @@
+@model NorthwindApp.Models.Order
+
+@{
+    ViewData["Title"] = "Detalle de Orden";
+}
+
+<h2> Detalle de Orden #@Model.OrderId</h2>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Cliente:</strong> @Model.ShipName</p>
+        <p><strong>Fecha:</strong> @Model.OrderDate?.ToString("dd/MM/yyyy")</p>
+        <p><strong>Ciudad:</strong> @Model.ShipCity</p>
+        <p><strong>Pas:</strong> @Model.ShipCountry</p>
+    </div>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Descuento</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var detail in Model.OrderDetails)
+        {
+            <tr>
+                <td>@detail.Product?.ProductName</td>
+                <td>$@detail.UnitPrice.ToString("0.00")</td>
+                <td>@detail.Quantity</td>
+                <td>@detail.Discount.ToString("P0")</td>
+                <td>$@((detail.UnitPrice * detail.Quantity).ToString("0.00"))</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr class="table-success">
+            <td colspan="4"><strong>TOTAL</strong></td>
+            <td><strong>$@Model.OrderDetails.Sum(d => d.UnitPrice * d.Quantity).ToString("0.00")</strong></td>
+        </tr>
+    </tfoot>
+</table>
+
+<a asp-action="Orders" class="btn btn-secondary mt-3"> Volver a rdenes</a>
